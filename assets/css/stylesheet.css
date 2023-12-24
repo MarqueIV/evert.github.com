@@ -8,6 +8,7 @@ html {
 
 body {
     font-family: 'PT Serif', serif;
+    background-color: #EEE;
     width: 100%;
     margin: 0;
     height: 100%;
@@ -42,6 +43,16 @@ ul,ol,p {
 h1 {
     text-align: left;
     font-size: 1.9em;
+    background: #444;
+    color: white;
+    margin-left: -5000px;
+    padding: 10px 20px 10px 5000px;
+    width: fit-content;
+    box-shadow: 10px 10px #666;
+    /*
+    border-width: 0 40px 40px 0;
+    border-image: url(/assets/img/dither.png) 100 repeat;
+    */
 }
 
 h2 {
