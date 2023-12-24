@@ -1,0 +1,479 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'PT Serif', serif;
+    width: 100%;
+    background-color: #EEE;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 120%;
+    color: black;
+}
+
+@media (max-width: 512px) {
+  body {
+    font-size: 100%;
+  }
+}
+
+@media print {
+  body {
+    font-size: 90%;
+  }
+  footer {
+    display: none;
+  }
+  .flower {
+    display: none;
+  }
+}
+
+ul,ol,p {
+    line-height: 1.75;
+}
+
+h1 {
+    text-align: left;
+    font-size: 1.9em;
+}
+
+h2 {
+    text-align: left;
+    font-size: 1.7em;
+}
+
+main {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 5px 5px 10px 5px;
+    flex: 1;
+}
+
+main a {
+    color: #009;
+    transition-property: color;
+    transition-duration: 0.4s;
+    /** Long links may be arbitrarily broken */
+    word-wrap: break-word;
+}
+
+main a:hover {
+    color: #900;
+
+}
+
+main a:visited {
+    color: purple;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table th {
+    background: #e1e1e1;
+    text-align: left;
+}
+
+table th, table td {
+    border-style: solid;
+    border-width: 0 1px 0 1px;
+    border-color: #555;
+    padding: 2px 30px 2px 5px;
+}
+
+footer {
+    box-shadow: inset 0 7px 12px -7px #000;
+    font-family: sans-serif;
+    font-size: 0.8em;
+    width: 100%;
+    background: #30303B;
+    padding: 10px 0;
+    color: #DDD;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: right bottom 5px;
+}
+
+footer a {
+    color: #DDD;
+    font-style: italic;
+    text-decoration: none;
+    transition-property: color;
+    transition-duration: 0.4s;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #FAA;
+    color: #CFC;
+}
+
+pre {
+    border-radius: 3px;
+    padding: 8px 8px 8px 8px;
+    background: #000;
+    line-height: 1;
+    color: #FFF;
+    overflow-x: auto;
+    font-family: "Monaco", monospace;
+}
+.flower {
+    background-image: url(/assets/img/flowerstatic.gif), url(/assets/img/flower200.gif);
+    background-repeat: no-repeat;
+    background-position: 0 0, 0 70px;
+    width: 50px;
+    height: 64px;
+    min-width: 50px;
+    min-height: 64px;
+    margin: 0 auto;
+    flex: 0;
+    padding-bottom: 10px;
+}
+
+.flower:hover {
+	background-position: -70px 0, 0 0;
+}
+
+blockquote {
+
+    border-left: 15px solid #CCC;
+    margin: 0;
+    padding-left: 5px;
+
+}
+
+.hireme {
+    border: 1px dashed #aaa;
+    background: #ccc;
+    font-size: 80%;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+code {
+     padding: 2px;
+     margin: 0;
+     background-color: rgba(0,0,0,0.09);
+     border-radius: 2px;
+     border: 1px solid #888;
+}
+
+pre>code {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    border: 0;
+}
+
+.evert-pic {
+    float: right;
+    padding: 0 10px 10px 0;
+}
+
+img.fill-width {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+figcaption {
+  font-size: 80%;
+}
+
+
+.http-series {
+  background: #DDD;
+  padding: 0px 20px 10px;
+  border: 2px dashed #000;
+  font-size: 80%;
+}
+
+.webmentions {
+  display: none;
+  padding-bottom: 40px;
+}
+
+.webmentions h2 {
+  font-size: 1.2em;
+  padding: 1px 5px 10px 0;
+  margin: 0;
+}
+
+.webmentions.visible {
+  display: block;
+}
+
+.webmentions ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.webmentions .facepile {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.webmentions .facepile img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  padding: 5px;
+  border-radius: 25px;
+}
+
+.webmentions ul.activity li {
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+
+/**
+ * Comments
+ */
+.comments {
+  padding-bottom: 40px;
+}
+.comments ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comments ul ul {
+  padding-left: 50px;
+  clear: both;
+}
+
+.comment {
+  display: flex;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px dotted #aaa;
+}
+
+.comment img {
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 30px;
+}
+.comment p {
+  margin: 0 0 15px 0;
+}
+.comment .author {
+  font-weight: 700;
+}
+.comment time {
+  font-size: 90%;
+  color: #555;
+}
+
+.dead-link:after {
+  content: "Dead :(";
+  display: inline-block;
+  background-color: red;
+  color: white;
+  font-size: 80%;
+  font-weight: bold;
+  padding: 0 2px;
+  text-decoration: none;
+  margin-left: 3px;
+  border-radius: 3px;
+}
+
+body.bigPost main {
+  max-width: 100%;
+}
+
+body.bigPost h1 {
+  text-align: center;
+}
+
+
+body.map .flower {
+  display: none;
+}
+
+
+body.map main {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+body.map main #map {
+  flex: 1;
+  min-width: 100%;
+}
+
+.subscribe {
+  float: right;
+  background: #f26522;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin: 3px 3px 0 0;
+  font-family: helvetica, Arial, sans-serif;
+  font-size: 90%;
+}
+
+.subscribe a {
+  color: white;
+  text-decoration: none;
+}
+
+
+/** Fix twitter responsiveness **/
+.twitter-tweet {
+  max-width: 100% !important;
+  overflow-x: auto;
+}
+
+
+.draft-warning {
+  background: #C33;
+  color: white;
+  font-size: 120%;
+  text-align: center;
+}
+
+figure * {
+  margin: 0 auto;
+}
+
+figure figcaption {
+  text-align: center;
+}
+
+figure video, figure svg {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+figure figcaption {
+  font-size: 90%;
+  font-style: italic;
+}
+
+figure table {
+  box-shadow: 5px 5px 40px #0003;
+  margin-bottom: 10px;
+  font-family: serif;
+}
+
+figure table th {
+  background: #333;
+  color: white;
+}
+
+figure table tr:nth-child(odd) {
+  background: #fff;
+}
+
+figure table tr:nth-child(even) {
+  background: #ccc;
+}
+
+figure table td, figure table th {
+  border: 0;
+  padding: 8px;
+}
+
+.badgateway {
+  font-family: monospace;
+  padding: 0;
+  margin: 0;
+  font-size: 120%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.badgateway p {
+  line-height: 1.25em;
+}
+
+.badgateway p.banner {
+  text-align: center;
+}
+
+
+.badgateway img {
+  max-width: 100%;
+  image-rendering: crisp-edges;
+}
+
+.badgateway div {
+  background: #000;
+  border: 1px solid #FF0;
+  color: #FF0;
+  width: 390px;
+  margin: 0 auto 10px auto;
+  box-shadow: 10px 10px 20px #330;
+  padding: 2px 10px 10px 10px;
+
+}
+
+
+@media screen and (min-width: 800px) {
+  .badgateway {
+    float: right;
+  }
+  .badgateway div {
+    max-width: 100%;
+    margin: 0 0 10px 0;
+  }
+}
+
+.badgateway a.btn {
+  background: #FF0;
+  color: black;
+}
+
+body.neko figure {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+body.neko {
+  background: #fe7384;
+  font-family: sans-serif;
+}
+
+body.neko #neko1 {
+  float: left;
+  padding-right: 10px;
+}
+
+body.neko #neko2, body.neko #neko3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.neko #neko1 img, body.neko #neko2 img, body.neko #neko3 {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0px 2px 12px #0007)
+}
+
+body.neko .flower, body.neko .cover {
+  /* Not showing the usual art */
+  display: none;
+}
