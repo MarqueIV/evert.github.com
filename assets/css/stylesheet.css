@@ -48,7 +48,7 @@ h1 {
     margin-left: -5000px;
     padding: 10px 20px 10px 5000px;
     width: fit-content;
-    box-shadow: 10px 10px #666;
+    box-shadow: 10px 10px 20px #666;
     /*
     border-width: 0 40px 40px 0;
     border-image: url(/assets/img/dither.png) 100 repeat;
